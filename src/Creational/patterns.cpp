@@ -1,10 +1,9 @@
 
 
 #include <iostream>
-
-#include "builder.hpp"
-#include "factory.hpp"
 #include <string>
+#include "factory.hpp"
+#include "builder.hpp"
 
 int main() {
 	builder_test();

@@ -2,20 +2,21 @@ cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
 set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # Target creational
-add_executable(creational patterns.cpp "builder.cpp" "factory.cpp")
+add_executable(creational patterns.cpp)
 
 target_include_directories(creational
         PUBLIC
         PRIVATE
-        ../../inc/Creational
+        builder
+        factory
         )
 #target_compile_definitions(creational
 #        )
 target_sources(creational
         PRIVATE
         patterns.cpp
-        builder.cpp
-        factory.cpp
+        builder/builder.cpp
+        factory/factory.cpp
         )
 target_compile_options(creational
         PRIVATE
@@ -29,8 +30,7 @@ target_link_libraries(creational
         PUBLIC
         )
 target_link_options(creational
-        PRIVATE 
-        "/DEBUG:FULL"
+        PRIVATE
 )
 set_target_properties(creational
         PROPERTIES
