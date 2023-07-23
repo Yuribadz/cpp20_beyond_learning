@@ -2,7 +2,7 @@
 
 void run_vals(void)
 {
-    std::cout << 4 << 2 << "\n";
+    fmt::print("{}", 42);
 }
 
 void run_char(void)
