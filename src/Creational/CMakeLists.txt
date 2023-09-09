@@ -18,10 +18,21 @@ target_sources(creational
         builder/builder.cpp
         factory/factory.cpp
         )
+if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+  # using Clang
+elseif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+  # using GCC
+elseif (CMAKE_CXX_COMPILER_ID STREQUAL "Intel")
+  # using Intel C++
+elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+  # using Visual Studio C++
 target_compile_options(creational
         PRIVATE
-#/Zi /MT /EHsc /Oy- /Ob0 /DEBUG
-        )
+        /std:c++20
+        /O2
+)
+endif()
+
 target_compile_features(creational
         PUBLIC
         cxx_std_20
